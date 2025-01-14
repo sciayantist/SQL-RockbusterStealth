@@ -44,7 +44,7 @@ FROM avg_amount_CTE
 
 
 
--- Using CTE to find out how many of the top 5 customers you identified in step 1 are based within each country
+-- Using CTE to find out the count of the top 5 customers identified previously is based within each country
 WITH top_customers_count_countires AS (
 SELECT B.customer_id,
        B.first_name,
