@@ -19,7 +19,6 @@ Download the Rockbuster dataset [here](http://www.postgresqltutorial.com/wp-cont
 * Relational database management systems (RDBMS)
 * Database environment using the PostgreSQL.
 
-## Visualizations and Presentation
+## Project Deliverables and Insights
 * Some of the project's visualizations can be found [here](https://public.tableau.com/views/Task10_17311786944560/Q3Q4?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
-
-* View Rockbuster Insights Presentation [here](file:///Users/aya/Desktop/Rockbuster-Insights-Presentation.pdf).
+* Reach out for more visualizations, data dictionary, findings, Insights, and presentation.
