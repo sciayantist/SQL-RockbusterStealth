@@ -1,1 +1,22 @@
 
+-- improve the movie search filters on the Rockbuster app and website. 
+-- add more film categories so users can browse more genres they’re interested in.
+
+-- The genre for the movie African Egg needs to be updated to thriller.
+-- SQL Queries 
+
+-- To find the “film_id” for the movie African Egg:
+
+SELECT * FROM film
+WHERE title = 'African Egg’
+
+-- To find the “category_id” for the movie ‘African Egg’:
+
+SELECT * FROM film_category
+WHERE film_id = 5
+
+-- To update the category of the movie ‘African Egg’ from Family(8) to Thriller(17 in the “film_category” table:
+
+UPDATE film_category
+SET category_id = 17
+WHERE category_id = 8
