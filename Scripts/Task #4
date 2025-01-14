@@ -1,0 +1,41 @@
+
+-- Optimizing queries, sorting and grouping data
+
+-- Refining Your Query:
+
+-- A. retrieve some data from the "film" table
+SELECT * FROM film
+
+-- B. retrieve data from “film_id” and “title” columns
+SELECT film_id,
+       title
+FROM film
+LIMIT 5
+
+
+-- Ordering the Data:
+
+-- Selecting every film from the "film" table, and 
+-- the movies sorted by title from A to Z, then by 
+-- most recent release year, and then by highest to lowest rental rate. 
+SELECT film_id,
+       title,
+       release_year,
+       rental_rate
+FROM film
+ORDER BY title ASC, 
+         release_year DESC,
+         rental_rate DESC
+
+
+-- Grouping Data:
+
+-- retrieve the average rental rate for each rating category
+-- retrieve the minimum and maximum rental durations for each rating category
+SELECT rating,
+AVG(rental_rate) AS AVG_rental_rate,
+MIN(rental_duration) AS MIN_rental_duration,
+MAX(rental_duration) AS MAX_rental_duration
+FROM film
+ORDER BY rating
+
