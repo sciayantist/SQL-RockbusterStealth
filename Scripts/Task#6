@@ -1,0 +1,144 @@
+
+-- Cleaning and Summarizing Data in SQL
+-- descriptive statistics using the MIN, MAX, AVG, COUNT, SUM, and MODE() aggregates
+
+-- A. Check for and clean dirty data:
+
+-- Film Table
+-- show only those records that duplicate (based on columns selected)
+SELECT film_id,
+       title,
+       description,
+       release_year,
+       language_id,
+       rental_duration,
+       rental_rate,
+       length,
+       replacement_cost,
+       rating,
+       last_update,
+       special_features,
+COUNT(*)
+FROM film
+GROUP BY film_id,
+         title,
+         description,
+         release_year,
+         language_id,
+         rental_duration,
+         rental_rate,
+         length,
+         replacement_cost,
+         rating,
+         last_update,
+         special_features
+HAVING COUNT(*) >1;       -- no result set means we have no duplicates
+
+
+
+-- Customer Table
+-- show only those records that duplicate (based on columns selected)
+SELECT customer_id,
+       store_id,
+       first_name,
+       last_name,
+       email,
+       address_id,
+       activebool,
+       create_date,
+       last_update,
+       active,
+COUNT(*)
+FROM customer
+GROUP BY customer_id,
+       store_id,
+       first_name,
+       last_name,
+       email,
+       address_id,
+       activebool,
+       create_date,
+       last_update,
+       active
+HAVING COUNT(*) >1;       -- no result set means we have no duplicates
+
+
+
+-- B. Summarize your data:
+
+-- calculate descriptive statistics for the film table
+
+-- #1 Descriptive statistic (rental_duration)
+SELECT MIN(rental_duration) AS min_rental_duration,
+       MAX(rental_duration) AS max_rental_duration,
+       AVG(rental_duration) AS avg_rental_duration,
+       COUNT(rental_duration) AS count_rent_values,
+       COUNT(*) AS count_rows
+FROM film;
+
+-- #2 Descriptive statistic (length)
+SELECT MIN(length) AS min_film_length,
+       MAX(length) AS max_film_length,
+       AVG(length) AS avg_film_length,
+       COUNT(length) AS count_film_length,
+       COUNT(*) AS count_rows
+FROM film;
+
+-- #3 Descriptive statistic (replacement_cost)
+SELECT MIN(replacement_cost) AS min_replacement_cost,
+       MAX(replacement_cost) AS max_replacement_cost,
+       AVG(replacement_cost) AS avg_replacement_cost,
+       COUNT(replacement_cost) AS count_replacement_cost,
+       COUNT(*) AS count_rows
+FROM film;
+
+-- #4 The Mode (title)
+SELECT MODE() WHITHIN GROUP (ORDER BY title)
+       AS modal_value_title,
+       COUNT(title) AS count_title,
+       COUNT(*) AS count_rows
+FROM film;
+
+-- #5 The Mode (rating)
+SELECT MODE() WHITHIN GROUP (ORDER BY rating)
+       AS modal_value_rating,
+       COUNT(rating) AS count_rating,
+       COUNT(*) AS count_rows
+FROM film;
+
+
+
+-- calculate descriptive statistics for the customer table
+
+-- #1 The Mode (store_id)
+SELECT MODE() WHITHIN GROUP (ORDER BY store_id)
+       AS modal_value_store_id,
+       COUNT(store_id) AS count_store_id,
+       COUNT(*) AS count_rows
+FROM customer;
+
+-- #2 The Mode (first_name)
+SELECT MODE() WHITHIN GROUP (ORDER BY first_name)
+       AS modal_value_first_name,
+       COUNT(first_name) AS count_first_name,
+       COUNT(*) AS count_rows
+FROM customer;
+
+-- #3 The Mode (last_name)
+SELECT MODE() WHITHIN GROUP (ORDER BY last_name)
+       AS modal_value_last_name,
+       COUNT(last_name) AS count_last_name,
+       COUNT(*) AS count_rows
+FROM customer;
+
+-- #4 The Mode (activebool)
+SELECT MODE() WHITHIN GROUP (ORDER BY activebool)
+       AS modal_value_activebool,
+       COUNT(activebool) AS count_activebool,
+       COUNT(*) AS count_rows
+FROM customer;
+
+
+
+
+
