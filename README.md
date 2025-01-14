@@ -16,5 +16,10 @@ Dataset contains information about Rockbuster’s film inventory, customers, and
 Download the Rockbuster dataset [here](http://www.postgresqltutorial.com/wp-content/uploads/2019/05/dvdrental.zip).
 
 ## Tools
-1. Relational database management systems (RDBMS)
-2. Database environment using the PostgreSQL.
+* Relational database management systems (RDBMS)
+* Database environment using the PostgreSQL.
+
+## Visualizations and Presentation
+* Some of the project's visualizations can be found [here](https://public.tableau.com/views/Task10_17311786944560/Q3Q4?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
+
+* View Rockbuster Insights Presentation [here](file:///Users/aya/Desktop/Rockbuster-Insights-Presentation.pdf).
